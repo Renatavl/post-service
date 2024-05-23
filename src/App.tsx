@@ -1,24 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import PostsViews from './views/PostsViews';
+import UserViews from './views/UsersViews';
+import OnePostViews from './views/OnePostViews';
+import EditPostViews from './views/EditPostViews';
+import CreatePostViews from './views/CreatePostViews';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <UserViews />,
+  },
+
+  {
+    path: '/user/:Id',
+    element: <PostsViews />,
+  },
+
+  {
+    path: '/post/:Id',
+    element: <OnePostViews />,
+  },
+
+  {
+    path: '/create/post',
+    element: <CreatePostViews />,
+  },
+
+  {
+    path: '/update/post/:Id',
+    element: <EditPostViews />,
+  },
+]);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <RouterProvider router={router} />
     </div>
   );
 }

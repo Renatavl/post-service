@@ -1,0 +1,16 @@
+.title {
+  color: #055C9D;
+  font-weight: 700;
+  text-align: center;
+  font-size: 50px;
+}
+
+.form_container {
+  border-radius: 15px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  width: 500px;
+  min-height: 250px;
+  margin: auto;
+  padding: 20px;
+  margin-top: 20px;
+}
